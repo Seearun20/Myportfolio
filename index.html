@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArunKumar - Software Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="icon" href="https://i.fbcd.co/products/original/ak-logo-letter-design-2-4ab5b9a3eaae1652231e240d71d7a3e906a7286eba249afef7867118cc56e50b.jpg" type="image/x-icon">
+
+<script>
+  (function(){
+    emailjs.init("sAL1u4F4KhutCORtz"); // your public key
+  })();
+</script>
+
+   
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">ArunKumar</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="stats-btn" onclick="openStatsPopup()">🏆 Coding Stats</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">ArunKumar</h1>
+            <h2 class="hero-subtitle">Software Developer & IT Student</h2>
+            <p class="hero-description">
+                Third-year Information Technology student at IIIT Allahabad, passionate about creating innovative solutions and building the future through code.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+    <img src="y.jpg" alt="ArunKumar">
+</div>
+            <div class="about-text">
+                <h3>Hello! I'm ArunKumar</h3>
+                <p>
+                    I'm a passionate third-year Information Technology student at the prestigious Indian Institute of Information Technology (IIIT) Allahabad. My journey in technology began with curiosity and has evolved into a deep commitment to creating meaningful digital experiences.
+                </p>
+                <p>
+                    Currently pursuing my undergraduate degree, I specialize in full-stack development, data structures, algorithms, and emerging technologies. I believe in the power of clean code, innovative solutions, and continuous learning to solve real-world problems.
+                </p>
+                <p>
+                    When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or collaborating with fellow developers to build something amazing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <div class="skills-grid">
+        <div class="skill-category">
+            <h3>Languages</h3>
+            <div class="skill"><span>Java</span><div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div></div>
+            <div class="skill"><span>C++</span><div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div></div>
+            <div class="skill"><span>C</span><div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div></div>
+            <div class="skill"><span>Python</span><div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div></div>
+            <div class="skill"><span>JavaScript</span><div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div></div>
+            <div class="skill"><span>HTML/CSS</span><div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div></div>
+        </div>
+        
+        <div class="skill-category">
+            <h3>Frameworks/Technologies</h3>
+            <div class="skill"><span>React.js</span><div class="skill-bar"><div class="skill-progress" style="width: 87%"></div></div></div>
+            <div class="skill"><span>Node.js</span><div class="skill-bar"><div class="skill-progress" style="width: 83%"></div></div></div>
+            <div class="skill"><span>MongoDB</span><div class="skill-bar"><div class="skill-progress" style="width: 78%"></div></div></div>
+            <div class="skill"><span>Firebase</span><div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div></div>
+            <div class="skill"><span>MySQL</span><div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div></div>
+        </div>
+
+        <div class="skill-category">
+            <h3>Tools & Platforms</h3>
+            <div class="skill"><span>Git/GitHub</span><div class="skill-bar"><div class="skill-progress" style="width: 89%"></div></div></div>
+            <div class="skill"><span>Canva</span><div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div></div>
+            <div class="skill"><span>Figma</span><div class="skill-bar"><div class="skill-progress" style="width: 65%"></div></div></div>
+            <div class="skill"><span>Android Development</span><div class="skill-bar"><div class="skill-progress" style="width: 60%"></div></div></div>
+            <div class="skill"><span>Kotlin</span><div class="skill-bar"><div class="skill-progress" style="width: 65%"></div></div></div>
+        </div>
+    </div>
+</section>
+
+
+           <div class="popup-overlay" id="statsPopup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeStatsPopup()">×</button>
+            <h2 class="stats-title">Live Coding Achievements</h2>
+            <div class="stats-grid">
+                <div class="stat-card" data-platform="codeforces">
+                    <div class="platform-icon">
+                        <img src="https://codeforces.org/s/0/images/codeforces-sponsored-by-ton.png" alt="Codeforces">
+                    </div>
+                    <div class="platform-name">Codeforces</div>
+                    <div class="problem-count" id="codeforces-count">--</div>
+                    <div class="count-label">Problems Solved</div>
+                    <a href="https://codeforces.com/profile/seearun" class="platform-link" target="_blank">View Profile</a>
+                    <button onclick="fetchCodeforces()" class="refresh-btn">↻ Refresh</button>
+                </div>
+
+                <div class="stat-card" data-platform="leetcode">
+                    <div class="platform-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode">
+                    </div>
+                    <div class="platform-name">LeetCode</div>
+                    <div class="problem-count" id="leetcode-count">--</div>
+                    <div class="count-label">Problems Solved</div>
+                    <a href="https://leetcode.com/u/arun20004/" class="platform-link" target="_blank">View Profile</a>
+                    <button onclick="fetchLeetCode()" class="refresh-btn">↻ Refresh</button>
+                </div>
+
+                <div class="stat-card" data-platform="codechef">
+                    <div class="platform-icon">
+                        <img src="https://www.codechef.com/sites/all/themes/abessive/cc-logo.png" alt="CodeChef">
+                    </div>
+                    <div class="platform-name">CodeChef</div>
+                    <div class="problem-count" id="codechef-count">--</div>
+                    <div class="count-label">Problems Solved</div>
+                    <a href="https://www.codechef.com/users/seearuncf" class="platform-link" target="_blank">View Profile</a>
+                    <button onclick="fetchCodeChef()" class="refresh-btn">↻ Refresh</button>
+                </div>
+            </div>
+            
+            <div class="last-updated" id="last-updated">
+                Click refresh buttons to fetch live data
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <section id="projects" class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+        <h3>Pet Care Android Application</h3>
+        <p>Developed a full-stack pet adoption platform in a team of 4, serving 100+ users. Features include pet profiles, adoption forms, and a marketplace.</p>
+        <div class="project-tech">
+            <span class="tech-tag">Kotlin</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">XML</span>
+        </div>
+    </div>
+            
+              <div class="project-card">
+        <h3>A-RunChess Online Gaming Platform</h3>
+        <p>Real-time chess platform with spectator mode and replay. Achieved sub-50ms latency for 20+ simultaneous players using optimized WebSocket communication.</p>
+        <div class="project-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Socket.io</span>
+            <span class="tech-tag">EJS</span>
+        </div>
+    </div>
+            
+            <!-- <div class="project-card">
+                <h3>Real-time Chat Application</h3>
+                <p>Modern chat application with features like group chats, file sharing, and end-to-end encryption. Built with modern web technologies for optimal performance.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Socket.io</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">JWT</span>
+                </div>
+            </div> -->
+            
+            <!-- <div class="project-card">
+                <h3>Data Visualization Dashboard</h3>
+                <p>Interactive dashboard for visualizing complex datasets with multiple chart types, filtering options, and export capabilities for data-driven insights.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">D3.js</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                </div>
+            </div> -->
+            
+            <div class="project-card">
+                <h3>E-commerce Jewellery Shop</h3>
+                <p>Cross-platform Web application with features like product catalog, secure payments, order tracking, and customer reviews system.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">html,css,js</span>
+                    <span class="tech-tag">Mongodb</span>
+                    <span class="tech-tag">Nodejs</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+            </div>
+            
+            <!-- <div class="project-card">
+                <h3>Blockchain Voting System</h3>
+                <p>Secure and transparent voting system built on blockchain technology ensuring immutable records and voter privacy with smart contract integration.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">Web3.js</span>
+                    <span class="tech-tag">Ethereum</span>
+                    <span class="tech-tag">React</span>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3 style="margin-bottom: 2rem; color: var(--primary);">Get In Touch</h3>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📧</span>
+                    <div>
+                        <strong>Email</strong>
+                        <p>seearun20@gmail.com</p>
+                        <p>iit2023080@iiita.ac.in</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📱</span>
+                    <div>
+                        <strong>Phone</strong>
+                        <p>+91 8279415323</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📍</span>
+                    <div>
+                        <strong>Location</strong>
+                        <p>IIIT Allahabad, UP, India</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">💼</span>
+                    <div>
+                        <strong>LinkedIn</strong>
+                                                <p><a href="https://www.linkedin.com/in/arun-kumar-500a0b288/" style="color: white;">https://www.linkedin.com/in/arun-kumar-500a0b288/</a></p>
+
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form" id="contact-form">
+
+                <h3 style="margin-bottom: 2rem; color: var(--primary);">Send Message</h3>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+ <footer>
+    <div class="social-links">
+        <a href="mailto:seearun20@gmail.com" class="social-link" title="Email">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" width="24" height="24">
+        </a>
+        <a href="https://codeforces.com/profile/seearun" class="social-link" target="_blank" title="Codeforces">
+            <img src="https://img.icons8.com/?size=160&id=jldAN67IAsrW&format=png" alt="Codeforces" width="24" height="24">
+        </a>
+        <a href="https://leetcode.com/u/arun20004/" class="social-link" target="_blank" title="LeetCode">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" width="24" height="24">
+        </a>
+        <a href="https://github.com/Seearun20" class="social-link" target="_blank" title="GitHub">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="24" height="24">
+        </a>
+    </div>
+    <p>&copy; 2025 ArunKumar. All rights reserved.</p>
+</footer>
+
+
+ 
+</body>
+</html>
