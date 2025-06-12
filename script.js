@@ -68,15 +68,16 @@ document.querySelectorAll('.section').forEach(section => {
 });
 
 // Skill bars animation
+// ...existing code...
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const skillBars = entry.target.querySelectorAll('.skill-progress');
             skillBars.forEach(bar => {
-                const width = bar.style.width;
+                const targetWidth = bar.getAttribute('data-width') || bar.style.width;
                 bar.style.width = '0%';
                 setTimeout(() => {
-                    bar.style.width = width;
+                    bar.style.width = targetWidth;
                 }, 300);
             });
         }
@@ -84,6 +85,11 @@ const skillObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.querySelectorAll('.skills-grid').forEach(section => {
+    // Set data-width attribute for animation
+    section.querySelectorAll('.skill-progress').forEach(bar => {
+        bar.setAttribute('data-width', bar.style.width);
+        bar.style.width = '0%';
+    });
     skillObserver.observe(section);
 });
 
@@ -469,5 +475,187 @@ function setupRetryMechanism() {
             }
         });
 
-// Initialize retry mechanism
+// ...existing code...
+
+function openResumePopup() {
+    // Check if popup already exists
+    if (document.getElementById('resumePopup')) {
+        document.getElementById('resumePopup').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        return;
+    }
+
+    // Create popup overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'popup-overlay';
+    overlay.id = 'resumePopup';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    overlay.style.background = 'rgba(15,23,42,0.85)';
+    overlay.style.zIndex = '99999';
+
+    // Create popup content
+    const content = document.createElement('div');
+    content.className = 'popup-content';
+    content.style.background = '#181e2a';
+    content.style.padding = '0';
+    content.style.borderRadius = '12px';
+    content.style.width = '90vw';
+    content.style.height = '90vh';
+    content.style.maxWidth = '100vw';
+    content.style.maxHeight = '100vh';
+    content.style.boxShadow = '0 8px 32px rgba(0,0,0,0.25)';
+    content.style.position = 'relative';
+    content.style.display = 'flex';
+    content.style.flexDirection = 'column';
+    content.style.alignItems = 'stretch';
+    content.style.overflow = 'hidden';
+
+    // Close button
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'popup-close';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '10px';
+    closeBtn.style.right = '20px';
+    closeBtn.style.fontSize = '2rem';
+    closeBtn.style.background = 'none';
+    closeBtn.style.border = 'none';
+    closeBtn.style.color = '#fff';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.zIndex = '2';
+    closeBtn.onclick = closeResumePopup;
+
+    // Download button
+    const downloadBtn = document.createElement('a');
+    downloadBtn.href = 'resume.pdf';
+    downloadBtn.download = 'ArunKumar_Resume.pdf';
+    downloadBtn.textContent = '⬇️ Download Resume';
+    downloadBtn.className = 'btn btn-primary';
+    downloadBtn.style.position = 'absolute';
+    downloadBtn.style.top = '10px';
+    downloadBtn.style.left = '20px';
+    downloadBtn.style.zIndex = '2';
+    downloadBtn.style.background = '#6366f1';
+    downloadBtn.style.color = '#fff';
+    downloadBtn.style.padding = '0.5rem 1rem';
+    downloadBtn.style.borderRadius = '6px';
+    downloadBtn.style.textDecoration = 'none';
+    downloadBtn.style.fontWeight = 'bold';
+    downloadBtn.style.fontSize = '1rem';
+
+    // PDF Viewer (iframe) - fills the popup
+    const iframe = document.createElement('iframe');
+    iframe.src = 'resume.pdf';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none';
+    iframe.style.background = '#fff';
+    iframe.style.borderRadius = '0';
+
+    // Append elements
+    content.appendChild(closeBtn);
+    content.appendChild(downloadBtn);
+    content.appendChild(iframe);
+    overlay.appendChild(content);
+    document.body.appendChild(overlay);
+
+    // Prevent background scroll
+    document.body.style.overflow = 'hidden';
+
+    // Close on overlay click
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeResumePopup();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', escResumeHandler);
+
+    // Add active class for possible CSS transitions
+    setTimeout(() => overlay.classList.add('active'), 10);
+}
+
+function closeResumePopup() {
+    const popup = document.getElementById('resumePopup');
+    if (popup) {
+        popup.classList.remove('active');
+        setTimeout(() => {
+            if (popup.parentNode) popup.parentNode.removeChild(popup);
+        }, 200);
+        document.body.style.overflow = 'auto';
+        document.removeEventListener('keydown', escResumeHandler);
+    }
+}
+
+function escResumeHandler(e) {
+    if (e.key === 'Escape') closeResumePopup();
+}
+
+// ...existing code...
 setupRetryMechanism();
+
+
+// ...existing code...
+
+// Water ripple effect across the whole screen
+// Water ripple effect across the whole screen
+(function() {
+    const canvas = document.getElementById('water-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let ripples = [];
+
+    function resizeCanvas() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function addRipple(x, y) {
+        ripples.push({
+            x, y,
+            radius: 0,
+            max: Math.random() * 120 + 180, // Even broader ripples
+            alpha: 0.18, // Lower alpha for realism
+            speed: Math.random() * 0.25 + 0.18 // Much slower speed
+        });
+    }
+
+    let lastMove = 0;
+    document.addEventListener('mousemove', e => {
+        // Only add ripple if mouse moved enough pixels or enough time passed
+        if (Date.now() - lastMove > 18) {
+            addRipple(e.clientX, e.clientY);
+            lastMove = Date.now();
+        }
+    });
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        for (let i = ripples.length - 1; i >= 0; i--) {
+            const r = ripples[i];
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, r.radius, 0, 2 * Math.PI);
+            ctx.strokeStyle = `rgba(99,102,241,${r.alpha})`;
+            ctx.lineWidth = 2 + r.radius * 0.025; // Thinner lines for realism
+            ctx.stroke();
+            r.radius += r.speed;
+            r.alpha *= 0.985; // Fade slower
+            if (r.radius > r.max || r.alpha < 0.02) {
+                ripples.splice(i, 1);
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+    animate();
+})();
