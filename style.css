@@ -528,6 +528,17 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(99, 102, 241, 0.3);
         }
+        .refresh-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
         .platform-link:hover {
             background: var(--primary);
