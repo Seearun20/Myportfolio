@@ -659,5 +659,38 @@ setupRetryMechanism();
     }
     animate();
 })();
+function openProject(element) {
+    const link = element.getAttribute('data-link');
+    if (link) {
+        // Add click animation
+        element.style.transform = 'translateY(-5px) scale(0.95)';
+        
+        setTimeout(() => {
+            window.open(link, '_blank');
+            element.style.transform = '';
+        }, 150);
+    }
+}
+
+// Add keyboard navigation
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+        const focusedElement = document.activeElement;
+        if (focusedElement.classList.contains('project-card')) {
+            e.preventDefault();
+            openProject(focusedElement);
+        }
+    }
+});
+
+// Make project cards focusable for accessibility
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Open project: ${card.querySelector('h3').textContent}`);
+    });
+});
 
 
