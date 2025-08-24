@@ -478,6 +478,7 @@ function setupRetryMechanism() {
 // ...existing code...
 
 function openResumePopup() {
+    const fileId = '1QHwJBF75hg1-VNUq_gxg4pK1UaVX1exe';
     // Check if popup already exists
     if (document.getElementById('resumePopup')) {
         document.getElementById('resumePopup').classList.add('active');
@@ -523,7 +524,7 @@ function openResumePopup() {
     closeBtn.innerHTML = '&times;';
     closeBtn.style.position = 'absolute';
     closeBtn.style.top = '10px';
-    closeBtn.style.right = '20px';
+    closeBtn.style.right = '50px';
     closeBtn.style.fontSize = '2rem';
     closeBtn.style.background = 'none';
     closeBtn.style.border = 'none';
@@ -533,8 +534,8 @@ function openResumePopup() {
     closeBtn.onclick = closeResumePopup;
 
     // Download button
-    const downloadBtn = document.createElement('a');
-    downloadBtn.href = 'resume.pdf';
+   const downloadBtn = document.createElement('a');
+    downloadBtn.href = `https://drive.google.com/uc?export=download&id=${fileId}`;
     downloadBtn.download = 'ArunKumar_Resume.pdf';
     downloadBtn.textContent = '⬇️ Download Resume';
     downloadBtn.className = 'btn btn-primary';
@@ -550,9 +551,8 @@ function openResumePopup() {
     downloadBtn.style.fontWeight = 'bold';
     downloadBtn.style.fontSize = '1rem';
 
-    // PDF Viewer (iframe) - fills the popup
     const iframe = document.createElement('iframe');
-    iframe.src = 'resume.pdf';
+    iframe.src = `https://drive.google.com/file/d/${fileId}/preview`;
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     iframe.style.border = 'none';
